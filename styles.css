@@ -118,8 +118,6 @@ body.dark-mode .faq-question:hover .faq-toggle {
   color: var(--text-dark);
 }
 
-
-
 body.dark-mode .contact-form input {
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -229,13 +227,27 @@ body {
     font-size: 1.1rem;
 }
 
+.nav-link, .logo-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+    transition: all 0.3s ease;
+  will-change: transform; 
+}
+
+.nav-link:hover, .logo-link {
+  text-decoration: none;
+  transform: perspective(500px) translateZ(20px); /* Efeito 3D mais pronunciado */
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #718096, #4a5568);
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 120px; /* Mobile-first */
+    padding-top: 170px; /* Mobile-first */
     color: white;
 }
 
@@ -659,7 +671,7 @@ body {
 }
 
 .footer-contact a {
-  color: #8f95a0; /* Cor padrão (cinza escuro) */
+  color: rgb(117, 117, 117); /* Cor padrão (cinza escuro) */
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 500;
@@ -667,7 +679,7 @@ body {
 }
 
 .footer-contact a:hover {
-  color: #2d3748; /* Cor mais escura */
+  color: var(--text-light); /* Cor mais escura */
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -729,7 +741,7 @@ body {
     }
 
     .hero {
-        padding-top: 80px;
+        padding-top: 200px;
     }
 
     .service-item {
