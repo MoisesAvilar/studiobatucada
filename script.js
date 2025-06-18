@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check for saved user preference
     const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'enabled') {
+    if (savedMode === 'enabled' || savedMode === null) {
         document.body.classList.add('dark-mode');
         darkModeToggle.innerHTML = '☀️';
     }
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
     initForms();
     initSmoothScrolling();
     initAnimations();
-    initMobileMenu();
     initScrollEffect(); // Nova função para o efeito de scroll
     
     // FAQ Accordion
@@ -400,4 +399,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("studioVideo");
+  const playButton = document.getElementById("playButton");
+
+  if (video && playButton) {
+    playButton.addEventListener("click", () => {
+      video.play();
+      playButton.style.display = "none";
+      video.setAttribute("controls", true);
+    });
+  }
+});
+
 
