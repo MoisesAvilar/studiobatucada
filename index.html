@@ -6,7 +6,7 @@
     <title>Studio Eliack Batucada - Transforme sua música</title>
     <link
       rel="icon"
-      href="images/logo_eliack_batucada_branco.jpg"
+      href="images/logo_eliack_batucada_fundo_escuro.png"
       type="image/png"
     />
     <meta name="color-scheme" content="light dark" />
@@ -19,37 +19,48 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Header -->
-    <!-- Header -->
-<header class="header" id="mainHeader">
-  <nav class="nav">
-    <div class="nav-container">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="#mainHeader" class="logo-link">
-          <img
-            src="images/logo_eliack_batucada_branco.jpg"
-            alt="Studio Eliack Batucada"
-            class="logo-img"
-          />
-        </a>
-      </div>
-      
-      <!-- Conteúdo Central -->
-      <div class="nav-center">
-        <a href="#mainHeader" class="nav-brand">
-          <h1 class="nav-title">Studio Eliack Batucada</h1>
-          <p class="nav-slogan">Mais que batuque, tocamos história</p>
-        </a>
-      </div>     
-    </div>
-  </nav>
-</header>
+    <header class="header" id="mainHeader">
+      <nav class="nav">
+        <div class="nav-container">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="#mainHeader" class="logo-link">
+              <img
+                src="images/logo_eliack_batucada_fundo_claro.png"
+                alt="Studio Eliack Batucada - Modo Claro"
+                class="logo-img logo-light"
+              />
+              <img
+                src="images/logo_eliack_batucada_fundo_escuro.png"
+                alt="Studio Eliack Batucada - Modo Escuro"
+                class="logo-img logo-dark"
+              />
+            </a>
+          </div>
+
+          <!-- Conteúdo Central -->
+          <div class="nav-center">
+            <a href="#mainHeader" class="nav-brand">
+              <h1 class="nav-title">Studio Eliack Batucada</h1>
+              <p class="nav-slogan">Mais que batuque, tocamos história</p>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero wood-accent">
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">Aprenda bateria com quem vive o ritmo</h1>
@@ -62,15 +73,15 @@
           <div class="form-container">
             <h3 class="form-title">Entre em contato</h3>
             <form class="contact-form" id="heroForm">
-              <input type="text" placeholder="Nome" required />
-              <input type="email" placeholder="E-mail" required />
-              <input type="tel" placeholder="DDD + Telefone" required />
+              <input type="text" placeholder="Nome completo" required />
+              <input type="email" placeholder="Seu melhor e-mail" required />
+              <input type="tel" placeholder="Telefone (com DDD)" required />
               <input
                 type="text"
                 placeholder="Como podemos te ajudar?"
                 required
               />
-              <button type="submit" class="btn-primary">
+              <button type="submit" class="btn-form">
                 Quero agendar uma aula
               </button>
             </form>
@@ -82,7 +93,7 @@
     <!-- Video Section -->
     <section class="video-section">
       <div class="container">
-        <h2 class="section-title">
+        <h2 class="section-title wood-text">
           Conheça um pouco da nossa estrutura de ensino
         </h2>
         <div class="video-content">
@@ -91,7 +102,7 @@
             <video
               id="studioVideo"
               src="images/video-studio.mp4"
-              poster="images/logo_eliack_batucada_branco.jpg"
+              poster="images/logo_eliack_batucada_fundo_claro.png"
               muted
               playsinline
               preload="metadata"
@@ -112,84 +123,106 @@
     <!-- Services Section -->
     <section class="services-section">
       <div class="container">
-        <h2 class="section-title">Alguns dos benefícios que oferecemos</h2>
+        <div class="section-header">
+          <h2 class="section-title">Nossos Serviços Exclusivos</h2>
+          <p class="section-subtitle">
+            Mais que batuque, oferecemos uma experiência completa para
+            bateristas
+          </p>
+        </div>
+
         <div class="services-grid">
-          <div class="service-item">
-            <div class="service-icon">🎵</div>
-            <div class="service-content">
-              <h3>Aulas presenciais e online</h3>
-              <p>
-                Oferecemos flexibilidade para que você aprenda no seu ritmo e
-                onde estiver. Com aulas presenciais em nosso estúdio equipado ou
-                online com suporte personalizado, você desenvolve suas
-                habilidades com conforto, praticidade e acompanhamento de
-                qualidade.
-              </p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">🎤</div>
-            <div class="service-content">
-              <h3>Loja com peças e acessórios para bateria</h3>
-              <p>
-                Nosso estúdio também conta com uma loja especializada, onde você
-                encontra desde baquetas e peles até acessórios de reposição.
-                Trabalhamos com marcas confiáveis e oferecemos orientação
-                técnica para garantir a escolha ideal para o seu equipamento.
-              </p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">🎧</div>
-            <div class="service-content">
-              <h3>Estrutura completa para treinar</h3>
-              <p>
-                Ambiente climatizado, cabines tratadas acusticamente e kits de
-                bateria completos à disposição. Aqui, você pode treinar sem
-                interrupções e com a mesma estrutura utilizada por bateristas
-                profissionais em estúdios e palcos.
-              </p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">🎼</div>
-            <div class="service-content">
-              <h3>Material didático exclusivo</h3>
-              <p>
-                Nossas aulas são acompanhadas por apostilas, exercícios
-                progressivos e acesso a vídeos complementares. Esse material foi
-                desenvolvido com base em anos de experiência para garantir um
-                aprendizado sólido e motivador em qualquer nível.
-              </p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-icon">🎹</div>
-            <div class="service-content">
-              <h3>Acompanhamento musical ao vivo</h3>
-              <p>
-                A evolução do aluno é potencializada com simulações de banda,
-                onde você toca com trilhas reais e, em algumas aulas, com
-                músicos ao vivo. Isso ajuda a desenvolver percepção rítmica,
-                controle e confiança para tocar em grupo.
-              </p>
-            </div>
-          </div>
-          <div class="service-item">
+          <div class="service-item wood-border">
             <div class="service-icon">🥁</div>
             <div class="service-content">
-              <h3>Workshops e eventos especiais</h3>
+              <h3>Aulas Presenciais e Online</h3>
               <p>
-                Regularmente promovemos workshops, rodas de conversa e
-                apresentações com músicos convidados. Essas experiências
-                enriquecem o aprendizado, criam conexões entre alunos e expandem
-                a visão musical além do conteúdo das aulas.
+                Flexibilidade para aprender no seu ritmo, onde estiver. Nossas
+                opções incluem:
               </p>
+              <ul class="service-features">
+                <li>Estúdio totalmente equipado</li>
+                <li>Suporte personalizado online</li>
+                <li>Horários flexíveis</li>
+                <li>Para todos os níveis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-item wood-border">
+            <div class="service-icon">🛒</div>
+            <div class="service-content">
+              <h3>Loja Especializada</h3>
+              <p>Tudo para bateristas em um só lugar:</p>
+              <ul class="service-features">
+                <li>Baquetas e peles de qualidade</li>
+                <li>Acessórios e peças de reposição</li>
+                <li>Marcas premium</li>
+                <li>Orientação técnica especializada</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-item wood-border">
+            <div class="service-icon">🏢</div>
+            <div class="service-content">
+              <h3>Estrutura Completa</h3>
+              <p>Ambiente profissional para seu treino:</p>
+              <ul class="service-features">
+                <li>Salas acusticamente tratadas</li>
+                <li>Kits profissionais disponíveis</li>
+                <li>Climatização e conforto</li>
+                <li>Equipamento de ótima qualidadde</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-item wood-border">
+            <div class="service-icon">📚</div>
+            <div class="service-content">
+              <h3>Material Didático</h3>
+              <p>Conteúdo exclusivo para seu desenvolvimento:</p>
+              <ul class="service-features">
+                <li>Apostilas atualizadas</li>
+                <li>Exercícios progressivos</li>
+                <li>Vídeos complementares</li>
+                <li>Metodologia comprovada</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-item wood-border">
+            <div class="service-icon">🎶</div>
+            <div class="service-content">
+              <h3>Acompanhamento ao Vivo</h3>
+              <p>Experiência real de tocar em banda:</p>
+              <ul class="service-features">
+                <li>Simulações com trilhas reais</li>
+                <li>Técnicas para tocar em qualquer ambiente/li></li>
+                <li>Desenvolvimento de percepção rítmica</li>
+                <li>Preparação para performances</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-item wood-border">
+            <div class="service-icon">🌟</div>
+            <div class="service-content">
+              <h3>Eventos Especiais</h3>
+              <p>Oportunidades únicas de aprendizado:</p>
+              <ul class="service-features">
+                <li>Apresentações de alunos</li>
+                <li>Networking musical</li>
+              </ul>
             </div>
           </div>
         </div>
+
         <div class="cta-center">
-          <button class="btn-primary">Agende sua aula experiental</button>
+          <button class="btn-primary">
+            <span class="btn-icon">🎵</span>
+            Agende sua aula experimental gratuita
+          </button>
         </div>
       </div>
     </section>
@@ -234,7 +267,7 @@
           </div>
         </div>
         <div class="cta-center">
-          <button class="btn-primary">Venha batucar também</button>
+          <button class="btn-primary">🎧🥁 Venha batucar também</button>
         </div>
       </div>
     </section>
@@ -352,7 +385,7 @@
             </p>
           </div>
           <div class="final-cta-form">
-            <div class="form-container">
+            <div class="form-container wood-border">
               <h3>
                 Solicite um orçamento sem compromisso agora. Ou ligue para nós e
                 converse com nossos especialistas.
@@ -363,9 +396,7 @@
                   placeholder="Insira seu e-mail aqui"
                   required
                 />
-                <button type="submit" class="btn-primary">
-                  Fale conosco
-                </button>
+                <button type="submit" class="btn-form">Fale conosco</button>
               </form>
             </div>
           </div>
@@ -374,36 +405,135 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer wood-accent">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
+        <div class="footer-grid">
+          <!-- Coluna Logo/Redes Sociais -->
+          <div class="footer-col footer-brand">
             <img
-              src="images/logo_eliack_batucada_branco.jpg"
-              alt="Studio Eliack Batucada"
-              class="logo-img"
+              src="images/logo_eliack_batucada_fundo_claro.png"
+              alt="Studio Eliack Batucada - Modo Claro"
+              class="logo-img logo-light"
             />
-          </div>
-          <div class="footer-contact">
-            <p>Studio Eliack Batucada © Todos os Direitos Reservados - 2025</p>
-            <p>CNPJ: 99.999.999 - 0009-99+ TERMOS DE USO</p>
-            <p>Telefone: (73) 99936-0890</p>
-            <p>
-              Instagram:
+            <img
+              src="images/logo_eliack_batucada_fundo_escuro.png"
+              alt="Studio Eliack Batucada - Modo Escuro"
+              class="logo-img logo-dark"
+            />
+            <div class="social-links">
               <a
                 href="https://www.instagram.com/eliackbatucada"
                 target="_blank"
                 rel="external"
-                >@eliackbatucada</a
+                class="social-link"
+                aria-label="Instagram"
               >
-              | Facebook:
+                <i class="fab fa-instagram"></i>
+              </a>
               <a
                 href="https://www.facebook.com/eliackbatucada"
                 target="_blank"
                 rel="external"
-                >eliackbatucada</a
+                class="social-link"
+                aria-label="Facebook"
               >
-            </p>
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="https://wa.me/5573999360890?text=Olá%20Studio%20Eliack%20Batucada,%20gostaria%20de%20mais%20informações%20sobre%20as%20aulas%20de%20bateria."
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna Links Úteis -->
+          <div class="footer-col">
+            <h3 class="footer-title">Links Rápidos</h3>
+            <ul class="footer-links">
+              <li><a href="#mainHeader" class="footer-link">Início</a></li>
+              <li><a href="#services" class="footer-link">Serviços</a></li>
+              <li><a href="#about" class="footer-link">Sobre</a></li>
+              <li><a href="#faq" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Coluna Contato -->
+          <div class="footer-col">
+            <h3 class="footer-title">Bata um Papo</h3>
+            <ul class="footer-contact">
+              <li class="contact-item">
+                <span class="contact-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <a href="tel:+5573999360890" class="footer-link phone-link"
+                  >(73) 99936-0890</a
+                >
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <a
+                  href="mailto:contato@eliackbatucada.com"
+                  class="footer-link email-link"
+                  >contato@eliackbatucada.com</a
+                >
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <a
+                  href="https://maps.google.com?q=Rua+Heitor+Coni,+N°10,+Teixeira+de+Freitas+-+BA"
+                  target="_blank"
+                  class="footer-link address-link"
+                >
+                  <strong>Rua:</strong> Heitor Coni, N°10<br/><strong>Bairro:</strong> Kaikan Sul<br><strong>Teixeira de Freitas - BA</strong>
+                </a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon">
+                  <i class="fas fa-clock contact-icon"></i>
+                </span>
+                <div class="opening-hours">
+                  <strong>Horário:</strong>
+                  <div>Seg-Sex: 8h-20h</div>
+                  <div>Sábado: 9h-12h</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna Newsletter -->
+          <div class="footer-col">
+            <h3 class="footer-title">Fique por Dentro</h3>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Seu melhor e-mail" required />
+              <button type="submit" class="btn-footer">
+                <span class="btn-icon">✉️</span>
+                Assinar
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <span>Studio Eliack Batucada © 2025</span>
+            <span class="legal-links">
+              <a href="#">Termos de Uso</a>
+              <a href="#">Política de Privacidade</a>
+            </span>
+          </div>
+          <div class="footer-credits">
+            <span>CNPJ:32.395.489/0001-34</span>
+            <span>Desenvolvido por Monza</span>
           </div>
         </div>
       </div>
