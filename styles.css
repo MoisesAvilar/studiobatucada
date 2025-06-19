@@ -486,10 +486,7 @@ body {
   margin: 0;
   line-height: 1.2;
   transition: all 0.3s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+
 }
 
 .nav-slogan {
