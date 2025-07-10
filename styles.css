@@ -121,6 +121,20 @@ body.dark-mode .testimonial-item {
   border: 1px solid var(--wood-light);
 }
 
+body.dark-mode .testimonial-card {
+  background: var(--card-bg-dark);
+  border: 1px solid var(--wood-light);
+}
+
+body.dark-mode .testimonial-video {
+  border: 2px solid var(--wood-light);
+}
+
+body.dark-mode .testimonial-content-text h4,
+body.dark-mode .testimonial-content-text p {
+  color: var(--text-light); /* Cor para modo escuro */
+}
+
 body.dark-mode .faq-item {
   background: var(--card-bg-dark);
   border: 1px solid var(--wood-light);
@@ -976,20 +990,97 @@ body {
 
 .testimonials-content {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: 1fr; /* Padrão mobile: uma coluna, um card por linha */
+  gap: 30px; /* Espaçamento entre os cards */
   margin-bottom: 3rem;
+  align-items: start; /* Alinha os cards ao topo de suas células na grade */
 }
 
-.testimonial-video .video-placeholder {
-  background: #4a5568;
+.testimonials-carousel-wrapper {
+  display: flex; /* Flexbox para rolagem horizontal */
+  overflow-x: auto; /* Habilita a rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Habilita o "snap" de rolagem */
+  -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
+  padding-bottom: 15px; /* Espaço para a barra de rolagem */
+  padding-left: 20px; /* Preenchimento para o primeiro card para alinhar bem */
+  padding-right: 20px; /* Preenchimento para o último card */
+  margin-left: -20px; /* Deslocamento para alinhar o carousel com as bordas do container */
+  margin-right: -20px; /* Deslocamento para alinhar o carousel com as bordas do container */
+  gap: 20px; /* Espaçamento entre os cards do carousel */
+}
+
+/* Estilos da barra de rolagem para navegadores WebKit */
+.testimonials-carousel-wrapper::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+
+.testimonials-carousel-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--wood-light); /* Cor do "polegar" da barra de rolagem */
+  border-radius: 4px; /* Cantos arredondados para o "polegar" */
+}
+
+.testimonials-carousel-wrapper::-webkit-scrollbar-track {
+  background-color: rgba(215, 168, 110, 0.2); /* Cor da "trilha" da barra de rolagem */
+  border-radius: 4px;
+}
+
+.testimonial-card {
+  flex-shrink: 0; /* Essencial para evitar que os cards encolham no carousel */
+  width: calc(100% - 40px); /* Largura para caber um card com padding */
+  max-width: 350px; /* Largura máxima para um card no carousel */
+  scroll-snap-align: center; /* Alinha o "snap" ao centro de cada card */
+  margin: 0 auto; /* Centraliza os cards individualmente na visualização do carousel */
+  padding: 1.5rem; /* Existing style */
+  background: white; /* Existing style */
+  border-radius: 15px; /* Existing style */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Existing style */
+  display: flex; /* Existing style */
+  flex-direction: column; /* Existing style */
+  text-align: center; /* Existing style */
+  gap: 1rem; /* Existing style */
+}
+
+/* Remove a margem extra para o primeiro card no carousel, já que o gap já lida com o espaçamento */
+.testimonials-carousel-wrapper > .testimonial-card:first-child {
+  margin-left: 0;
+}
+
+.testimonial-video {
+  width: 100%; /* Ocupa a largura total do .testimonial-card */
+  max-width: 350px; /* Limite de largura para o vídeo dentro do card em mobile */
+  margin: 0 auto 1.5rem auto; /* Centraliza horizontalmente e adiciona margem inferior */
+  position: relative;
+  background: var(--bg-dark);
+  aspect-ratio: 9 / 16; /* CRUCIAL para a proporção de retrato */
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid var(--wood-light);
+}
+
+/* Estilo para o elemento de vídeo dentro do contêiner */
+.testimonial-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Garante que o vídeo se ajuste sem cortar */
+  border-radius: 15px;
+}
+
+
+.testimonial-video, .video-placeholder {
+  background: var(--bg-dark);
 }
 
 .testimonials-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
 .testimonial-item {
@@ -1017,16 +1108,19 @@ body {
   margin: 0 auto;
 }
 
-.testimonial-content h4 {
+.testimonial-content-text h4 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #2d3748;
+  padding: 1em;
+  text-align: center;
 }
 
-.testimonial-content p {
+.testimonial-content-text p {
   color: #4a5568;
   line-height: 1.6;
   text-align: justify;
+  padding: 1em;
 }
 
 /* About Section */
@@ -1715,6 +1809,36 @@ body {
     text-align: left;
   }
 
+  .testimonials-content {
+    display: grid; /* Ativa o grid para telas maiores */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adapta para 2 ou mais colunas */
+    gap: 30px; /* Espaçamento entre os cards na grade */
+    align-items: start; /* Alinha os cards ao topo de suas células na grade */
+  }
+
+  .testimonials-carousel-wrapper {
+    display: contents; /* Reverte para o fluxo normal, removendo o comportamento de carousel */
+    overflow-x: visible; /* Desabilita a rolagem horizontal */
+    scroll-snap-type: none; /* Desabilita o "snap" de rolagem */
+    padding-left: 0; /* Remove padding do carousel */
+    padding-right: 0; /* Remove padding do carousel */
+    margin-left: 0; /* Remove margens do carousel */
+    margin-right: 0; /* Remove margens do carousel */
+    gap: 0; /* Remove o gap específico do carousel */
+  }
+
+  .testimonial-card {
+    max-width: 100%; /* Permite que os cards ocupem a largura total dentro das colunas da grade */
+    width: auto; /* Reverte para largura automática para o layout de grade */
+    margin: 0; /* Remove margem de centralização */
+    scroll-snap-align: none; /* Desabilita o "snap" de rolagem */
+  }
+
+  /* Remove o espaçamento específico do carousel entre os cards */
+  .testimonials-carousel-wrapper > .testimonial-card + .testimonial-card {
+    margin-left: 0;
+  }
+
   .service-icon,
   .testimonial-avatar {
     margin: 0;
@@ -1769,11 +1893,15 @@ body {
   }
 
   .video-content,
-  .testimonials-content,
   .about-content,
   .final-cta-content {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+  }
+
+  .testimonials-content {
+    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas de largura igual para desktop */
+    gap: 40px; /* Maior espaçamento em telas grandes */
   }
 
   .services-grid {

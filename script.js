@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
     function initDarkMode() {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.className = 'dark-mode-toggle';
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.setAttribute('aria-label', 'Alternar modo escuro');
-    document.body.appendChild(darkModeToggle);
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.className = 'dark-mode-toggle';
+        darkModeToggle.innerHTML = '🌙';
+        darkModeToggle.setAttribute('aria-label', 'Alternar modo escuro');
+        document.body.appendChild(darkModeToggle);
 
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'enabled' || savedMode === null) {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '☀️';
-    }
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled' || savedMode === null) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '☀️';
+        }
 
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        
-        darkModeToggle.innerHTML = isDarkMode ? '☀️' : '🌙';
-        
-        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-    });
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            
+            darkModeToggle.innerHTML = isDarkMode ? '☀️' : '🌙';
+            
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        });
     }
 
     initDarkMode();
@@ -31,31 +31,31 @@ document.addEventListener("DOMContentLoaded", function() {
     initServicesAnimation();
     
     function initServicesAnimation() {
-    const serviceItems = document.querySelectorAll('.service-item');
-    
-    serviceItems.forEach((item, index) => {
-        item.addEventListener('mouseenter', () => {
-        const icon = item.querySelector('.service-icon');
-        const titleLine = item.querySelector('.service-content h3::after');
+        const serviceItems = document.querySelectorAll('.service-item');
         
-        icon.style.transform = 'rotate(10deg) scale(1.1)';
-        
-        if (titleLine) {
-            titleLine.style.width = '80px';
-        }
+        serviceItems.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+            const icon = item.querySelector('.service-icon');
+            const titleLine = item.querySelector('.service-content h3::after');
+            
+            icon.style.transform = 'rotate(10deg) scale(1.1)';
+            
+            if (titleLine) {
+                titleLine.style.width = '80px';
+            }
+            });
+            
+            item.addEventListener('mouseleave', () => {
+            const icon = item.querySelector('.service-icon');
+            const titleLine = item.querySelector('.service-content h3::after');
+            
+            icon.style.transform = 'rotate(0) scale(1)';
+            
+            if (titleLine) {
+                titleLine.style.width = '50px';
+            }
+            });
         });
-        
-        item.addEventListener('mouseleave', () => {
-        const icon = item.querySelector('.service-icon');
-        const titleLine = item.querySelector('.service-content h3::after');
-        
-        icon.style.transform = 'rotate(0) scale(1)';
-        
-        if (titleLine) {
-            titleLine.style.width = '50px';
-        }
-        });
-    });
     }
 
     function initFAQ() {
@@ -236,8 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const animatedElements = document.querySelectorAll(".service-item, .testimonial-item, .faq-item, .section-title");
         animatedElements.forEach(el => observer.observe(el));
-    }
-    
+    } 
     
     function initFieldFormatting() {
         const phoneFields = document.querySelectorAll("input[type=\"tel\"]");
@@ -356,19 +355,56 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    function setupVideoPlayer(videoId, playButtonId) {
+        const video = document.getElementById(videoId);
+        const playButton = document.getElementById(playButtonId);
+
+        if (video && playButton) {
+            // Garante que o botão de play esteja visível inicialmente
+            playButton.style.display = "flex";
+            playButton.style.zIndex = "2";
+            playButton.style.position = "absolute"; // Importante para sobrepor o vídeo
+
+            playButton.addEventListener("click", () => {
+                video.play();
+                video.setAttribute("controls", true);
+                playButton.style.display = "none"; // Esconde o botão ao iniciar
+            });
+
+            video.addEventListener("pause", () => {
+                if (video.currentTime > 0 && !video.ended) {
+                    playButton.style.display = "flex"; // Mostra o botão ao pausar
+                }
+            });
+
+            video.addEventListener("ended", () => {
+                playButton.style.display = "flex"; // Mostra o botão quando o vídeo termina
+                video.removeAttribute("controls");
+                video.load(); // Recarrega o vídeo para mostrar o poster novamente
+            });
+
+            // Condição inicial para exibir ou esconder o botão
+            if (video.paused || video.currentTime === 0) {
+                video.removeAttribute("controls");
+                playButton.style.display = "flex";
+            } else {
+                video.setAttribute("controls", true);
+                playButton.style.display = "none";
+            }
+        }
+    }
+
+    // Chama a função para o vídeo do estúdio
+    setupVideoPlayer("studioVideo", "playButton");
+
+    // Chama a função para o vídeo principal de testemunho
+    setupVideoPlayer("testimonialVideo", "playButtonTestimonial");
+
+    // Chama a função para os novos vídeos de testemunho
+    setupVideoPlayer("testimonialVideo2", "playButtonTestimonial2");
+    setupVideoPlayer("testimonialVideo3", "playButtonTestimonial3");
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("studioVideo");
-  const playButton = document.getElementById("playButton");
-
-  if (video && playButton) {
-    playButton.addEventListener("click", () => {
-      video.play();
-      playButton.style.display = "none";
-      video.setAttribute("controls", true);
-    });
-  }
-});
 
 

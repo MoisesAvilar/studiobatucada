@@ -6,7 +6,7 @@
     <title>Studio Eliack Batucada - Transforme sua música</title>
     <link
       rel="icon"
-      href="images/logo_eliack_batucada_fundo_escuro.png"
+      href="media/logo_eliack_batucada_fundo_escuro.png"
       type="image/png"
     />
     <meta name="color-scheme" content="light dark" />
@@ -36,12 +36,12 @@
           <div class="logo">
             <a href="#mainHeader" class="logo-link">
               <img
-                src="images/logo_eliack_batucada_fundo_claro.png"
+                src="media/logo_eliack_batucada_fundo_claro.png"
                 alt="Studio Eliack Batucada - Modo Claro"
                 class="logo-img logo-light"
               />
               <img
-                src="images/logo_eliack_batucada_fundo_escuro.png"
+                src="media/logo_eliack_batucada_fundo_escuro.png"
                 alt="Studio Eliack Batucada - Modo Escuro"
                 class="logo-img logo-dark"
               />
@@ -101,8 +101,8 @@
             <div class="play-button" id="playButton">▶</div>
             <video
               id="studioVideo"
-              src="images/video-studio.mp4"
-              poster="images/logo_eliack_batucada_fundo_claro.png"
+              src="media/video-studio.mp4"
+              poster="media/logo_eliack_batucada_fundo_claro.png"
               muted
               playsinline
               preload="metadata"
@@ -232,35 +232,74 @@
       <div class="container">
         <h2 class="section-title">Quem conhece, recomenda</h2>
         <div class="testimonials-content">
-          <div class="testimonial-video">
-            <div class="video-placeholder">
-              <div class="play-button">▶</div>
-            </div>
-          </div>
-          <div class="testimonials-list">
-            <div class="testimonial-item">
-              <div class="testimonial-avatar">👤</div>
-              <div class="testimonial-content">
-                <h4>Nome do cliente</h4>
+          <div class="testimonials-carousel-wrapper">
+            <div class="testimonial-card">
+              <div class="testimonial-video">
+                <div class="play-button" id="playButtonTestimonial">▶</div>
+                <video
+                  id="testimonialVideo"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  poster="media/logo_eliack_batucada_fundo_escuro.png"
+                  src="media/depoimento.mp4"
+                >
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+              </div>
+              <div class="testimonial-content-text"> <h4>Queila Farias (Mãe do aluno Marcos Filho)</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Excepturi in dolore necessitatibus, repellendus porro error
-                  possimus suscipit mollitia ducimus corporis laborum dolorum
-                  facilis placeat sapiente. Commodi perspiciatis mollitia
-                  deleniti nam.
+                  "Procurei o Tio Eliack pelo profissionalismo dele e para ajudar meu
+                  filho a sair um pouco das telas. Hoje, vejo como o instrumento o
+                  ajuda a se capacitar e se entregar à música. Recomendo demais!"
                 </p>
               </div>
             </div>
-            <div class="testimonial-item">
-              <div class="testimonial-avatar">👤</div>
-              <div class="testimonial-content">
-                <h4>Nome do cliente</h4>
+
+            <div class="testimonial-card">
+              <div class="testimonial-video">
+                <div class="play-button" id="playButtonTestimonial2">▶</div>
+                <video
+                  id="testimonialVideo2"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  poster="media/logo_eliack_batucada_fundo_escuro.png"
+                  src="media/VID-20231204-WA0159.mp4"
+                >
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+              </div>
+              <div class="testimonial-content-text">
+                <h4>Nome do Cliente 2 (Aluno/Amigo)</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Excepturi in dolore necessitatibus, repellendus porro error
-                  possimus suscipit mollitia ducimus corporis laborum dolorum
-                  facilis placeat sapiente. Commodi perspiciatis mollitia
-                  deleniti nam.
+                  "O Studio Eliack Batucada superou minhas expectativas! As aulas são
+                  dinâmicas e o suporte é incrível. Minha evolução na bateria foi
+                  rápida e prazerosa. Recomendo a todos que buscam excelência."
+                </p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-video">
+                <div class="play-button" id="playButtonTestimonial3">▶</div>
+                <video
+                  id="testimonialVideo3"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  poster="media/logo_eliack_batucada_fundo_escuro.png"
+                  src="media/VID-20231204-WA0160.mp4"
+                >
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+              </div>
+              <div class="testimonial-content-text">
+                <h4>Nome do Cliente 3 (Aluno/Parceiro)</h4>
+                <p>
+                  "A estrutura do estúdio é fantástica, e o Eliack é um professor
+                  muito atencioso. Aprendi muito sobre técnica e ritmo, e agora me
+                  sinto confiante para tocar minhas músicas favoritas. Valeu!"
                 </p>
               </div>
             </div>
@@ -277,7 +316,7 @@
       <div class="container">
         <div class="about-content">
           <div class="about-image">
-            <img class="about-img" src="images/eliack.png" alt="eliack-img" />
+            <img class="about-img" src="media/eliack.png" alt="eliack-img" />
           </div>
           <div class="about-text">
             <h2>Quem Somos</h2>
@@ -411,12 +450,12 @@
           <!-- Coluna Logo/Redes Sociais -->
           <div class="footer-col footer-brand">
             <img
-              src="images/logo_eliack_batucada_fundo_claro.png"
+              src="media/logo_eliack_batucada_fundo_claro.png"
               alt="Studio Eliack Batucada - Modo Claro"
               class="logo-img logo-light"
             />
             <img
-              src="images/logo_eliack_batucada_fundo_escuro.png"
+              src="media/logo_eliack_batucada_fundo_escuro.png"
               alt="Studio Eliack Batucada - Modo Escuro"
               class="logo-img logo-dark"
             />
@@ -494,7 +533,10 @@
                   target="_blank"
                   class="footer-link address-link"
                 >
-                  <strong>Rua:</strong> Heitor Coni, N°10<br/><strong>Bairro:</strong> Kaikan Sul<br><strong>Teixeira de Freitas - BA</strong>
+                  <strong>Rua:</strong> Heitor Coni, N°10<br /><strong
+                    >Bairro:</strong
+                  >
+                  Kaikan Sul<br /><strong>Teixeira de Freitas - BA</strong>
                 </a>
               </li>
               <li class="contact-item">
