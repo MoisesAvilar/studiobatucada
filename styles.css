@@ -997,17 +997,19 @@ body {
 }
 
 .testimonials-carousel-wrapper {
-  display: flex; /* Flexbox para rolagem horizontal */
-  overflow-x: auto; /* Habilita a rolagem horizontal */
-  scroll-snap-type: x mandatory; /* Habilita o "snap" de rolagem */
-  -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
-  padding-bottom: 15px; /* Espaço para a barra de rolagem */
-  padding-left: 20px; /* Preenchimento para o primeiro card para alinhar bem */
-  padding-right: 20px; /* Preenchimento para o último card */
-  margin-left: -20px; /* Deslocamento para alinhar o carousel com as bordas do container */
-  margin-right: -20px; /* Deslocamento para alinhar o carousel com as bordas do container */
-  gap: 20px; /* Espaçamento entre os cards do carousel */
+  display: flex; /* Garante que os itens fiquem lado a lado */
+  overflow-x: auto; /* Permite a rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Habilita o "snap" ao rolar */
+  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
+  padding-bottom: 15px; /* Espaço para a barra de rolagem, se visível */
+  /* Ajuste crucial para alinhar os cards ao container e permitir scroll-snap */
+  padding-left: 20px; /* Espaço antes do primeiro card */
+  padding-right: 20px; /* Espaço após o último card */
+  margin-left: -20px; /* Compensa o padding-left para o wrapper ficar full width */
+  margin-right: -20px; /* Compensa o padding-right para o wrapper ficar full width */
+  gap: 20px; /* Espaçamento entre os cards */
 }
+
 
 /* Estilos da barra de rolagem para navegadores WebKit */
 .testimonials-carousel-wrapper::-webkit-scrollbar {
@@ -1025,19 +1027,21 @@ body {
 }
 
 .testimonial-card {
-  flex-shrink: 0; /* Essencial para evitar que os cards encolham no carousel */
-  width: calc(100% - 40px); /* Largura para caber um card com padding */
-  max-width: 350px; /* Largura máxima para um card no carousel */
-  scroll-snap-align: center; /* Alinha o "snap" ao centro de cada card */
-  margin: 0 auto; /* Centraliza os cards individualmente na visualização do carousel */
-  padding: 1.5rem; /* Existing style */
-  background: white; /* Existing style */
-  border-radius: 15px; /* Existing style */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Existing style */
-  display: flex; /* Existing style */
-  flex-direction: column; /* Existing style */
-  text-align: center; /* Existing style */
-  gap: 1rem; /* Existing style */
+  flex-shrink: 0; /* IMPEDIR QUE OS CARDS ENCOLHAM */
+  /* Calcular a largura para mostrar um card por vez com padding nas laterais */
+  width: calc(100vw - 40px); /* 100% da largura da viewport - (20px padding-left + 20px padding-right) */
+  max-width: 350px; /* Mantém um limite para o tamanho do card em telas um pouco maiores, mas ainda consideradas mobile */
+  scroll-snap-align: center; /* Cada card se alinha ao centro da área de rolagem */
+  margin: 0; /* Remover margens que possam interferir com flexbox e scroll-snap */
+  /* Resto dos estilos existentes do .testimonial-card */
+  padding: 1.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
 }
 
 /* Remove a margem extra para o primeiro card no carousel, já que o gap já lida com o espaçamento */
@@ -1811,27 +1815,26 @@ body {
 
   .testimonials-content {
     display: grid; /* Ativa o grid para telas maiores */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adapta para 2 ou mais colunas */
-    gap: 30px; /* Espaçamento entre os cards na grade */
-    align-items: start; /* Alinha os cards ao topo de suas células na grade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: start;
   }
 
-  .testimonials-carousel-wrapper {
-    display: contents; /* Reverte para o fluxo normal, removendo o comportamento de carousel */
-    overflow-x: visible; /* Desabilita a rolagem horizontal */
-    scroll-snap-type: none; /* Desabilita o "snap" de rolagem */
-    padding-left: 0; /* Remove padding do carousel */
-    padding-right: 0; /* Remove padding do carousel */
-    margin-left: 0; /* Remove margens do carousel */
-    margin-right: 0; /* Remove margens do carousel */
-    gap: 0; /* Remove o gap específico do carousel */
+ .testimonials-carousel-wrapper {
+    display: contents; /* Reverte para o fluxo normal do grid */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0; /* Remove paddings do carousel */
+    margin: 0; /* Remove margens do carousel */
+    gap: 0; /* Remove gap do carousel */
   }
 
   .testimonial-card {
-    max-width: 100%; /* Permite que os cards ocupem a largura total dentro das colunas da grade */
-    width: auto; /* Reverte para largura automática para o layout de grade */
-    margin: 0; /* Remove margem de centralização */
-    scroll-snap-align: none; /* Desabilita o "snap" de rolagem */
+    width: auto; /* Volta para a largura automática do grid */
+    max-width: 100%; /* Remove o limite de largura do carousel */
+    margin: 0; /* Remove margens de centralização */
+    scroll-snap-align: none; /* Desabilita o snap */
+    flex-shrink: 1; /* Permite que os cards encolham no grid se necessário */
   }
 
   /* Remove o espaçamento específico do carousel entre os cards */
