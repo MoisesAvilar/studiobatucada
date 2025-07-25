@@ -570,10 +570,10 @@ function App() {
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Mais que Música, <span className="text-wood">uma Família</span>
+                Mais que Batuque, <span className="text-wood">tocamos história</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-6">
-                Sou Eliack, músico profissional com mais de 15 anos de estrada e
+                Sou Eliack, músico profissional com mais de 20 anos de estrada e
                 há mais de 6 anos dedicado ao ensino. Para mim, a música é uma
                 ferramenta de transformação, e minha missão é ajudar cada aluno
                 a encontrar seu ritmo único em um ambiente acolhedor e familiar.
