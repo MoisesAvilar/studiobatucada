@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Input } from "./components/ui/input";
@@ -130,6 +131,16 @@ function App() {
         videoRef.current.muted = false;
       }
     }
+  };
+
+  const handleNextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonial((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
   };
 
   const handleSubmit = (e) => {
@@ -352,6 +363,13 @@ function App() {
 
     return () => observer.disconnect();
   }, []);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleNextTestimonial(),
+    onSwipedRight: () => handlePrevTestimonial(),
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground smooth-scroll">
@@ -719,7 +737,7 @@ function App() {
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative" {...swipeHandlers}>
             <Card className="overflow-hidden drum-shadow">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2">
