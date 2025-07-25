@@ -201,3 +201,8 @@
   background: rgba(245, 245, 220, 0.1);
   border: 1px solid rgba(210, 105, 30, 0.2);
 }
+
+:fullscreen video {
+  object-fit: contain;
+  background-color: black;
+}
