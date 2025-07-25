@@ -404,6 +404,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Chama a função para os novos vídeos de testemunho
     setupVideoPlayer("testimonialVideo2", "playButtonTestimonial2");
     setupVideoPlayer("testimonialVideo3", "playButtonTestimonial3");
+    setupVideoPlayer("testimonialVideo4", "playButtonTestimonial4");
+    setupVideoPlayer("testimonialVideo5", "playButtonTestimonial5");
+    setupVideoPlayer("testimonialVideo6", "playButtonTestimonial6");
+    setupVideoPlayer("testimonialVideo7", "playButtonTestimonial7");
 });
 
 

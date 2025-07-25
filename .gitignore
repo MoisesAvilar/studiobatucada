@@ -1,1 +1,17 @@
-/a.txt
+node_modules/
+
+# Arquivos de build e de ambiente
+dist/
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
