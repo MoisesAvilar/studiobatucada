@@ -11,7 +11,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-# Arquivos de sistema
 .DS_Store
 Thumbs.db
