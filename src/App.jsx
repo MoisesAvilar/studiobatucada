@@ -1016,8 +1016,7 @@ function App() {
                 className="h-16 w-auto mb-4"
               />
               <p className="text-white/80 mb-4">
-                Mais que batuque, tocamos história. Transformando vidas através
-                da música.
+                Mais que batuque, tocamos história.
               </p>
               <div className="flex space-x-4">
                 <a
